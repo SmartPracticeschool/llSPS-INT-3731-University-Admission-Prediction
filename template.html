@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ML Project</title>
+	<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=UGHtn4zSK0-y5urXOug2rt8EXP1k1n9onvI6u2Ck0VGjFjRa-LTvcblgDam3wJdDrxx4tbwln5AmjVI_0tdCmLUjU6MkiSfuDZBp19MM1UmrCZ-qtgeea0TW718ntg_sM8LXWm8m6yM_-vYp1VdkQFf29ydLDmDwfsAl828LPaKtjNlGsB95qgJk1KK9Sf8tPOnx8ZrWbP-a2qevWXEwVx0DOSefQW3GRm_AvPQ9CllNlpIK29x9V_ihpKmjFUXe1A8xyeHfr32jL3v9NFnpgKFci2ubJ-Dn3LnUPXIiF8F0418BX3xYQQRjlOSYT3WyAXIZ8j47TR8juMecUWtVYQ" charset="UTF-8"></script><style >
+		body{
+               background-image:url(https://www.ox.ac.uk/sites/files/oxford/styles/ow_large_feature/s3/field/field_image_main/GAF%20Radcliffe%20Square%20Dawn%20-%20Elizabeth%20Nyikos.jpg?itok=U-0F0aPx);
+			   background-size: cover;
+			   background-attachment: fixed;
+               text-align:left;
+
+		}
+		form {
+            font-color: black;
+            font-weight: bold;
+		}
+         
+         
+         form input{
+            color: white;
+         	background:none;
+         	margin-top: 2px;
+         	padding: 5px 5px 5px 5px;
+
+         }
+
+         h1{
+         	text-decoration: underline;
+         	letter-spacing: 1px;
+         }
+
+         button{
+         	letter-spacing: 2px;
+         	border: none;
+            border-radius: 150px;
+            background-color: red;
+            padding-left: 100px;
+            padding-right:100px;
+            padding-top: 15px;
+            padding-bottom:15px;
+            font-size: 20px; 
+            color:white;
+         }
+
+         p{
+          background-color:white;
+          padding-left: 80px;
+          margin-right: 900px;
+          padding-top: 8px;
+          padding-bottom: 8px;
+          font-size: 20px;
+
+         }
+
+         div{
+         	padding-left: 500px;
+         	padding-top: 10px;
+         }
+
+        select{
+        	padding:3px 3px 3px 3px;
+        	background:none;
+        	padding-right: 5px;
+        	outline: none;
+        }
+         
+         
+    </style>
+</head>
+<body>
+	<div>
+		<h1 style="color: red;">UNIVERSITY ADMISSION PREDICTION</h1>
+
+		<form action="{{ url_for('y_predict')}}"method="post">
+			
+			         GRE SCORE:<br>
+			         <input type="number" name="GRE score" placeholder ="GRE score" required="required" ><br><br>
+			       TOEFL SCORE:<br>
+			       <input type="number" name="TOEFL score" placeholder="TOEFL score" required="required"><br><br>
+			University SCORE:<br>
+			       <input type="number" name="University ranking" placeholder="University ranking" required="required"><br><br>
+                           SOP:<br>
+			               <input type="number" style="padding-right: 100px;" min="0.1" max="9.9" step="0.1" name="SOP" placeholder="SOP" required="required" ><br><br>
+			             LOR:<br>
+			              <input type="number" style="padding-right: 100px;" min="0.1" max="9.9" step="0.1"  name="LOR" placeholder="LOR" required="required"><br><br>
+			             CGPA:<br>
+			             <input type="number" style="padding-right: 90px;" name="CGPA" min="0.1" max="9.9" step="0.01"  placeholder="CGPA" required="required"><br><br>
+                         <select name="Research Experience" required="required">
+                                <option value="">Research Experience</option>
+                               <option value="0">0</option>
+                         	   <option value="1">1</option>
+                         </select><br><br>			         
+			              <br>   
+                          <br>
+                       
+            <button type="submit" class="btn btn - danger btn - large">PREDICT</button>
+		</form>
+          <br>
+         <p><b>{{ prediction_text }}</b></p>
+
+	</div>
+
+</body>
+</html>
