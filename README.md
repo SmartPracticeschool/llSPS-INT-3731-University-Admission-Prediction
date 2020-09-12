@@ -1,8 +1,10 @@
 # llSPS-INT-3731-University-Admission-Prediction
-University Admission Prediction
+University Admission Prediction.
+
 This project aims at predicting the probability of students with different characteristics being accepted in a University based on their profile.
 
 In this project I have built a Regression model, Artificial Neural Network, Decision Tree and Random Forest models for prediction.
+
 Data
 Data Source
 
